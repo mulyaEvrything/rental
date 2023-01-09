@@ -27,3 +27,6 @@ if ($data) {
 } else {
   echo "Tambah data gagal";
 }
+
+?>
+

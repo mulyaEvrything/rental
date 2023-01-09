@@ -21,3 +21,6 @@ if (!$_SESSION['id_admin']) {
   } else {
     echo "Tambah data gagal";
   }
+
+?>
+
