@@ -1,19 +1,25 @@
-<?php 
-  include "koneksi.php";
+<?php
+include "koneksi.php";
 
-  //menerima data dari method POST
-  $id = $_GET ['id_pelanggan'];
-  
-  
+// <!-- Cek apakah sudah login -->
+session_start();
 
-  
-  // proses menambah dalam databse
-  $data = $koneksi->query ("DELETE FROM tbpelanggan WHERE id_pelanggan=$id");
+if (!$_SESSION['id_admin']) {
+  header('location:login.php');
+  exit();
+}
 
-  if($data){
-    header ('location:pelanggan_list.php');
+//menerima data dari method POST
+$id = $_GET['id_pelanggan'];
 
-  } else {
-    echo "Tambah data gagal";
-  }
- ?>
+
+
+
+// proses menambah dalam databse
+$data = $koneksi->query("DELETE FROM tbpelanggan WHERE id_pelanggan=$id");
+
+if ($data) {
+  header('location:pelanggan_list.php');
+} else {
+  echo "Tambah data gagal";
+}

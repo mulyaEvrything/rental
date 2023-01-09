@@ -1,6 +1,14 @@
 <?php 
   include "koneksi.php";
 
+  // <!-- Cek apakah sudah login -->
+session_start();
+
+if (!$_SESSION['id_admin']) {
+  header('location:login.php');
+  exit();
+}
+
   //menerima data dari method POST
   $nama = $_POST ['nama_admin'];
   $psw = $_POST ['password'];
@@ -15,4 +23,3 @@
   } else {
     echo "Tambah data gagal";
   }
- ?>
