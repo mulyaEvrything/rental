@@ -224,24 +224,27 @@ if (!$_SESSION['id_admin']) {
                       <th>Deskripsi Barang</th>
                       <th>Harga Barang</th>
                       <th>Foto Barang</th>
-                      <th style="text-align: center;">Aksi</th>
+                      <th style="text-align: center;" colspan="2">Aksi</th>
                     </tr>
                     <?php
                     $no = 1;
                     $q = $koneksi->query("SELECT * FROM tbbarang");
                     while ($data = $q->fetch_assoc()) { ?>
 
-                      <tr>
-                        <td style="text-align: left;"><?php echo $no++; ?></td>
+                      <tr style="table-layout:fixed;">
+                        <td><?php echo $no++; ?></td>
                         <td><?php echo $data['id_barang'] ?></td>
                         <td><?php echo $data['nama_barang'] ?></td>
                         <td><?php echo $data['deskripsi_barang'] ?></td>
                         <td><?php echo $data['harga_barang'] ?></td>
-                        <td><?php echo $data['foto_barang'] ?></td>
+                        <td><img src="img/<?php echo $data['foto_barang'] ?>" style="width: 100%;"></td>
                         <td style="text-align: center;">
                           <a href="edit_barang_form.php?id_barang=<?php echo $data['id_barang'] ?>" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit mr-1">Ubah</i>
                           </a>
+                        
+                        </td>
+                        <td>
                           <a href="delete_barang_action.php?id_barang=<?php echo $data['id_barang'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin Boss?')">
                             <i class="fas fa-edit mr-1">Hapus</i>
                           </a>

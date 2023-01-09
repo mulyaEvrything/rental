@@ -234,7 +234,7 @@
                   </div>
                   <div class="form-group">
                     <label>Foto Barang</label>
-                    <input type="file" class="input-group-text" value="<?php echo $data['foto_barang']?>">
+                    <input type="file" name="foto_barang" class="input-group-text" value="<?php echo $data['foto_barang']?>">
                   </div>
 
                   <div class="form-group">

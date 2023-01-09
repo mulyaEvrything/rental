@@ -15,6 +15,12 @@ $desb = $_POST['deskripsi_barang'];
 $hb = $_POST['harga_barang'];
 $fb = $_FILES['foto_barang']['name'];
 
+$dir = "img/";
+$tmpFile = $_FILES['foto_barang']['tmp_name'];
+
+move_uploaded_file($tmpFile, $dir.$fb);
+
+
 
 
 // proses menambah dalam databse
@@ -28,4 +34,3 @@ if ($data) {
 }
 
 ?>
-

@@ -227,7 +227,7 @@
                   </div>
                   <div class="form-group">
                     <label>Foto Barang</label>
-                    <input type="file" class="input-group-text">
+                    <input type="file" name="foto_barang" class="input-group-text">
                   </div>
 
                   <div class="form-group">
